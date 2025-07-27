@@ -1,4 +1,5 @@
 import os
+import json
 from openai import OpenAI
 import requests
 
@@ -83,8 +84,6 @@ response = client.chat.completions.create(
 )
 
 review = response.choices[0].message.content
-import json
-
 try:
     review_data = json.loads(review)
 except Exception as e:
